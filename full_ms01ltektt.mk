@@ -14,23 +14,12 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-# Ramdisk
 PRODUCT_PACKAGES += \
-	fstab.qcom \
-	init.qcom.rc \
-	init.qcom.usb.rc \
-	MSM8226_lpm.rc \
-	ueventd.qcom.rc \
-	charger \
-	charger_res_images
+	fstab.qcom
 
-# Philz
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/extra.fstab:recovery/root/etc/extra.fstab
-
-# TWRP
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab \
+    $(LOCAL_PATH)/recovery.fstab:recovery/root/etc/recovery.fstab
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_LOCALES += xhdpi
